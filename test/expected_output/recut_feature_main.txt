@@ -1,0 +1,19 @@
+
+[1mRecut feature from main         [0m
+[1m--------------------------------[0m
+[92mpick ce9dac8c53af03d8 Commit 0  [0m
+[92mpick c0aadea35962d875 Commit 1  [0m
+[92mpick 2349725f6801948b Commit 2  [0m
+[91mpick 0f8a43ee25a103b3 Commit I  [0m[37m # Only on main      [0m
+[91mpick d1d1e2af45492eb3 Commit II [0m[37m # Only on main      [0m
+[93mpick 5950d06d3f2e5f5e Commit 3  [0m
+[91mpick 9baae6c7c66c67fd Commit III[0m[37m # Only on main      [0m
+[91mpick 57c2da00d9c68f53 Commit IV [0m[37m # Only on main      [0m
+[93mpick 01def913d8f9f9e0 Commit 4  [0m
+[91mpick 861f603e4200b1a0 Commit V  [0m[37m # Only on main      [0m
+[91mpick 4a0f662073048504 Commit VI [0m[37m # Only on main      [0m
+[95mpick 083cf2ee57ba455e Commit a  [0m
+[95mpick 8513c09059973e59 Commit b  [0m
+[95mpick 41de0ffa48afa8dc Commit c  [0m
+[95mpick 7338c7e87eb98fad Commit d  [0m
+

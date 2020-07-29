@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 2349725f6801948b14b4b721676f79c31bbbfd1f Philip Kiely <philip.kiely@example.com> 1595434398 -0500	branch: Created from HEAD
+2349725f6801948b14b4b721676f79c31bbbfd1f 083cf2ee57ba455e04e34a8d2827e24325a2cf0d Philip Kiely <philip.kiely@example.com> 1595434398 -0500	commit: Commit a
+083cf2ee57ba455e04e34a8d2827e24325a2cf0d 8513c09059973e598c8d75dfecf7bcfa91877827 Philip Kiely <philip.kiely@example.com> 1595434398 -0500	commit: Commit b
+8513c09059973e598c8d75dfecf7bcfa91877827 ef4dedbfa45dab510d4c51e7f020ead177e3c673 Philip Kiely <philip.kiely@example.com> 1595434398 -0500	cherry-pick: Commit 3
+ef4dedbfa45dab510d4c51e7f020ead177e3c673 41de0ffa48afa8dc08cd147a79351fb56bc85b90 Philip Kiely <philip.kiely@example.com> 1595434398 -0500	commit: Commit c
+41de0ffa48afa8dc08cd147a79351fb56bc85b90 a29476c84664fbb56cf5f76476ef23d11b1ce480 Philip Kiely <philip.kiely@example.com> 1595434398 -0500	cherry-pick: Commit 4
+a29476c84664fbb56cf5f76476ef23d11b1ce480 7338c7e87eb98fad9e7292f21afd368b1c258c92 Philip Kiely <philip.kiely@example.com> 1595434398 -0500	commit: Commit d
