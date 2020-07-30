@@ -1,4 +1,4 @@
-from subprocess import run
+from subprocess import run, PIPE
 import unittest
 
 # The number of columns to use during test recording and playback
@@ -16,7 +16,7 @@ class GOMPIntegrationTestCase(unittest.TestCase):
 
     def test_feature_main(self):
         gomp_output = run(['python3', '../gomp.py', 'feature', 'main', '--cols', NUM_COLS],
-                          capture_output=True,
+                          stdout=PIPE,
                           universal_newlines=True,
                           check=False,
                           ).stdout
@@ -27,7 +27,7 @@ class GOMPIntegrationTestCase(unittest.TestCase):
 
     def test_recut_feature_main(self):
         gomp_output = run(['python3', '../gomp.py', 'feature', 'main', '--recut', '--cols', NUM_COLS],
-                          capture_output=True,
+                          stdout=PIPE,
                           universal_newlines=True,
                           check=False,
                           ).stdout
@@ -38,7 +38,7 @@ class GOMPIntegrationTestCase(unittest.TestCase):
 
     def test_key_feature_main(self):
         gomp_output = run(['python3', '../gomp.py', 'feature', 'main', '--key', '--cols', NUM_COLS],
-                          capture_output=True,
+                          stdout=PIPE,
                           universal_newlines=True,
                           check=False,
                           ).stdout
@@ -49,7 +49,7 @@ class GOMPIntegrationTestCase(unittest.TestCase):
 
     def test_help(self):
         gomp_output = run(['python3', '../gomp.py', '-h'],
-                          capture_output=True,
+                          stdout=PIPE,
                           universal_newlines=True,
                           check=False,
                           ).stdout
