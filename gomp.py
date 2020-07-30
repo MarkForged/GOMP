@@ -15,7 +15,7 @@
 
 import os
 import re
-from subprocess import run
+from subprocess import run, PIPE
 import argparse
 
 #############
@@ -292,7 +292,7 @@ def show_recut_offer():
 def branch_exists(branch):
     verify = run(
         ['git', 'show-ref', branch],
-        capture_output=True,
+        stdout=PIPE,
         universal_newlines=True,
         check=False,
     ).stdout
@@ -339,13 +339,13 @@ def process_commands():
     # Grab inline history of both branches
     source_history = run(
         ['git', '--no-pager', 'log', src, '--pretty=oneline'],
-        capture_output=True,
+        stdout=PIPE,
         universal_newlines=True,
         check=False,
     ).stdout.splitlines()
     destination_history = run(
         ['git', '--no-pager', 'log', dest, '--pretty=oneline'],
-        capture_output=True,
+        stdout=PIPE,
         universal_newlines=True,
         check=False,
     ).stdout.splitlines()
