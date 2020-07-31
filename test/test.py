@@ -58,6 +58,17 @@ class GOMPIntegrationTestCase(unittest.TestCase):
         f.close()
         self.assertEqual(gomp_output, expected_output)
 
+    def test_merge_multiple_commits(self):
+        gomp_output = run(['python3', '../gomp.py', 'main-merge-target', 'main-merge-target~1', '--cols', NUM_COLS],
+                          stdout=PIPE,
+                          universal_newlines=True,
+                          check=False,
+                          ).stdout
+        f = open('expected_output/merge_multiple_commits.txt', 'r')
+        expected_output = f.read()
+        f.close()
+        self.assertEqual(gomp_output, expected_output)
+
     def test_help(self):
         gomp_output = run(['python3', '../gomp.py', '-h'],
                           stdout=PIPE,

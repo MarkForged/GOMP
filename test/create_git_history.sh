@@ -2,7 +2,7 @@
 
 function fakecommit {
     touch $1.temp
-    git add .
+    git add *.temp
     git commit -m "Commit $1"
 }
 
@@ -32,5 +32,20 @@ fakecommit d
 git checkout main
 fakecommit V
 fakecommit VI
+
+git checkout -b main-merge-target
+git checkout -b main-forked
+fakecommit e1
+fakecommit e2
+fakecommit e3
+fakecommit e4
+fakecommit e5
+fakecommit e6
+git checkout main-merge-target
+fakecommit m1
+fakecommit m2
+fakecommit m3
+git merge main-forked
+
 mv .git test_history
 rm *.temp

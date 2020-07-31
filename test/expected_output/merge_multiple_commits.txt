@@ -1,0 +1,11 @@
+
+[1mmain-merge-target (src)                [0m  [1mmain-merge-target~1 (dest)             [0m
+[1m---------------------------------------[0m  [1m---------------------------------------[0m
+[95m327f3c3 Merge branch 'main-forked' into[0m  [37m                                       [0m
+[92m281de56 Commit m3                      [0m  [92m281de56 Commit m3                      [0m
+[92m7083ef8 Commit m2                      [0m  [92m7083ef8 Commit m2                      [0m
+[92m18c941e Commit m1                      [0m  [92m18c941e Commit m1                      [0m
+[95mb98a46e Commit e6                      [0m  [92m4a0f662 Commit VI                      [0m
+[95md5c46e8 Commit e5                      [0m  [92m861f603 Commit V                       [0m
+[95me2e405b Commit e4                      [0m  [92m01def91 Commit 4                       [0m
+

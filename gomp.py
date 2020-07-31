@@ -98,14 +98,14 @@ destination_history = None
 
 def create_title_map(commits, end_hash=None):
     title_map = {}
+    # Note: we must compute the entire history of commit name-mapping here
+    # to account for highly divergent branches. This could maybe be more clever.
     for commit in commits:
         # If there are conflicting titles, suffix them with hash
         if commit[1] in title_map:
             commit[1] = commit[1] + ' - ' + commit[0][0:hash_length]
         # Map titles to hashes
         title_map[commit[1]] = commit[0]
-        if commit[0] == end_hash:
-            break
     return title_map
 
 
@@ -113,39 +113,42 @@ def create_title_map(commits, end_hash=None):
 def find_first_common_hash(source_commit, destination_commit, previous=0):
     source_map = {}
     destination_map = {}
-    _hash = '?'
-    # Find first common hash occurence
-    for i in range(min(len(source_commit), len(destination_commit))):
-        source_hash = source_commit[i][0]
-        destination_hash = destination_commit[i][0]
-        source_map[source_hash] = i
-        destination_map[destination_hash] = i
-        if source_hash in destination_map:
-            _hash = source_commit[i][0]
-            break
-        if destination_hash in source_map:
-            _hash = destination_commit[i][0]
-            break
-    # Traverse either history to find that hash and select 'previous' hashes ago
-    i = 0
+
+    index = 0
     while True:
-        if source_commit[i][0] == _hash:
-            break
-        i += 1
-    # min here avoids out of bounds error in short repos
-    i += min(previous, len(source_commit) - i - 1)
-    return source_commit[i][0]
+        source_in_bound = index < len(source_commit)
+        dest_in_bound = index < len(destination_commit)
+
+        if source_in_bound:
+            hash_source = source_commit[index][0]
+            source_map[hash_source] = True
+
+        if dest_in_bound:
+            hash_dest = destination_commit[index][0]
+            destination_map[hash_dest] = True
+
+        # Are we out of runway?
+        if not (source_in_bound or dest_in_bound):
+            raise Exception('The branches share no common history!')
+
+        # If either hash is present in the other branch by now, success!
+        if dest_in_bound and hash_dest in source_map:
+            return hash_dest
+        if source_in_bound and hash_source in destination_map:
+            return hash_source
+        index += 1
 
 
 # Returns a list of hash + title paired with color code
 def construct_diff_list(
     commits, source_title_map, destination_title_map, end_hash
 ):
-    done = False
     i = 0
+    trailing_rows = 5
+    count_down_trailing_rows = False
     rows = []
     # Print until matching hash found
-    while not done:
+    while trailing_rows > 0:
         row = commits[i]
         _hash = row[0]
         _title = row[1]
@@ -166,9 +169,20 @@ def construct_diff_list(
             rows.append([_hash[0:hash_length] + ' ' + _title, BColors.DEST_NEW])
         elif exists_in_source:
             rows.append([_hash[0:hash_length] + ' ' + _title, BColors.SRC_NEW])
+        else:
+            raise Exception('https://xkcd.com/2200/')
+
+        # If there are no more commits, we're done
         i += 1
+        if i >= len(commits):
+            break
+
+        # If the target hash is found, start a countdown of trailing context commits.
         if _hash == end_hash:
-            done = True
+            count_down_trailing_rows = True
+        elif count_down_trailing_rows:
+            trailing_rows -= 1
+
     return rows
 
 

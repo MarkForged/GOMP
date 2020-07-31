@@ -21,3 +21,16 @@ a29476c84664fbb56cf5f76476ef23d11b1ce480 7338c7e87eb98fad9e7292f21afd368b1c258c9
 7338c7e87eb98fad9e7292f21afd368b1c258c92 01def913d8f9f9e026126de2a941538be011ee0b Philip Kiely <philip.kiely@example.com> 1595434398 -0500	checkout: moving from feature to main
 01def913d8f9f9e026126de2a941538be011ee0b 861f603e4200b1a0fffdd270629fafcc35a11a78 Philip Kiely <philip.kiely@example.com> 1595434398 -0500	commit: Commit V
 861f603e4200b1a0fffdd270629fafcc35a11a78 4a0f6620730485045b0f8f2878ae290765179ccd Philip Kiely <philip.kiely@example.com> 1595434398 -0500	commit: Commit VI
+4a0f6620730485045b0f8f2878ae290765179ccd 4a0f6620730485045b0f8f2878ae290765179ccd Ariel Wexler <ariel@example.com> 1596238122 -0400	checkout: moving from main to main-merge-target
+4a0f6620730485045b0f8f2878ae290765179ccd 4a0f6620730485045b0f8f2878ae290765179ccd Ariel Wexler <ariel@example.com> 1596238123 -0400	checkout: moving from main-merge-target to main-forked
+4a0f6620730485045b0f8f2878ae290765179ccd e8296b958fe52f96966e94a7c07c83cbec31b697 Ariel Wexler <ariel@example.com> 1596238219 -0400	commit: Commit e1
+e8296b958fe52f96966e94a7c07c83cbec31b697 af0769b0eaf7a07882ddb13d0760f808cae22f49 Ariel Wexler <ariel@example.com> 1596238229 -0400	commit: Commit e2
+af0769b0eaf7a07882ddb13d0760f808cae22f49 41787b7b0c55c2cf9143420742a1a4e8833e66c7 Ariel Wexler <ariel@example.com> 1596238230 -0400	commit: Commit e3
+41787b7b0c55c2cf9143420742a1a4e8833e66c7 e2e405b13c1fab78be0c65092d5a688313208a47 Ariel Wexler <ariel@example.com> 1596238232 -0400	commit: Commit e4
+e2e405b13c1fab78be0c65092d5a688313208a47 d5c46e8780f541f4b904d1a312d8b7bfafc73434 Ariel Wexler <ariel@example.com> 1596238233 -0400	commit: Commit e5
+d5c46e8780f541f4b904d1a312d8b7bfafc73434 b98a46e968ee8e3bb3565a68f9d6e86c0168c9ca Ariel Wexler <ariel@example.com> 1596238236 -0400	commit: Commit e6
+b98a46e968ee8e3bb3565a68f9d6e86c0168c9ca 4a0f6620730485045b0f8f2878ae290765179ccd Ariel Wexler <ariel@example.com> 1596238257 -0400	checkout: moving from main-forked to main-merge-target
+4a0f6620730485045b0f8f2878ae290765179ccd 18c941e220d9ba1b34ed71b3acf85a3fb8b36955 Ariel Wexler <ariel@example.com> 1596238262 -0400	commit: Commit m1
+18c941e220d9ba1b34ed71b3acf85a3fb8b36955 7083ef85f8aeb6574e85373e7c4dc5eb13f7b41b Ariel Wexler <ariel@example.com> 1596238263 -0400	commit: Commit m2
+7083ef85f8aeb6574e85373e7c4dc5eb13f7b41b 281de565de1be3a6d0034fccc6635cf94e10a209 Ariel Wexler <ariel@example.com> 1596238265 -0400	commit: Commit m3
+281de565de1be3a6d0034fccc6635cf94e10a209 327f3c3a72b23df5bdecf84a361bb3e3daa7f3d5 Ariel Wexler <ariel@example.com> 1596238272 -0400	merge main-forked: Merge made by the 'recursive' strategy.

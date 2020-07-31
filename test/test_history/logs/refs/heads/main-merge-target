@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 4a0f6620730485045b0f8f2878ae290765179ccd Ariel Wexler <ariel@example.com> 1596238122 -0400	branch: Created from HEAD
+4a0f6620730485045b0f8f2878ae290765179ccd 18c941e220d9ba1b34ed71b3acf85a3fb8b36955 Ariel Wexler <ariel@example.com> 1596238262 -0400	commit: Commit m1
+18c941e220d9ba1b34ed71b3acf85a3fb8b36955 7083ef85f8aeb6574e85373e7c4dc5eb13f7b41b Ariel Wexler <ariel@example.com> 1596238263 -0400	commit: Commit m2
+7083ef85f8aeb6574e85373e7c4dc5eb13f7b41b 281de565de1be3a6d0034fccc6635cf94e10a209 Ariel Wexler <ariel@example.com> 1596238265 -0400	commit: Commit m3
+281de565de1be3a6d0034fccc6635cf94e10a209 327f3c3a72b23df5bdecf84a361bb3e3daa7f3d5 Ariel Wexler <ariel@example.com> 1596238272 -0400	merge main-forked: Merge made by the 'recursive' strategy.
