@@ -1,0 +1,11 @@
+
+[1mfeature~2 (src)                        [0m  [1m5950d06 (dest)                         [0m
+[1m---------------------------------------[0m  [1m---------------------------------------[0m
+[95m41de0ff Commit c                       [0m  [37m                                       [0m
+[93mef4dedb Commit 3                       [0m  [93m5950d06 Commit 3                       [0m
+[95m8513c09 Commit b                       [0m  [91md1d1e2a Commit II                      [0m
+[95m083cf2e Commit a                       [0m  [91m0f8a43e Commit I                       [0m
+[92m2349725 Commit 2                       [0m  [92m2349725 Commit 2                       [0m
+[92mc0aadea Commit 1                       [0m  [92mc0aadea Commit 1                       [0m
+[92mce9dac8 Commit 0                       [0m  [92mce9dac8 Commit 0                       [0m
+

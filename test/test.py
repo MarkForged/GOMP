@@ -47,6 +47,17 @@ class GOMPIntegrationTestCase(unittest.TestCase):
         f.close()
         self.assertEqual(gomp_output, expected_output)
 
+    def test_hash_vs_ref(self):
+        gomp_output = run(['python3', '../gomp.py', 'feature~2', '5950d06', '--cols', NUM_COLS],
+                          stdout=PIPE,
+                          universal_newlines=True,
+                          check=False,
+                          ).stdout
+        f = open('expected_output/hash_vs_ref.txt', 'r')
+        expected_output = f.read()
+        f.close()
+        self.assertEqual(gomp_output, expected_output)
+
     def test_help(self):
         gomp_output = run(['python3', '../gomp.py', '-h'],
                           stdout=PIPE,

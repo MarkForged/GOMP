@@ -291,12 +291,12 @@ def show_recut_offer():
 
 def branch_exists(branch):
     verify = run(
-        ['git', 'show-ref', branch],
+        ['git', 'cat-file', '-t', branch],
         stdout=PIPE,
         universal_newlines=True,
         check=False,
-    ).stdout
-    return verify != ''
+    ).stdout.strip()
+    return verify == 'commit'
 
 
 # Basic command input parser
