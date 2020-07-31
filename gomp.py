@@ -84,7 +84,7 @@ def print_color_key(source='src', destination='dest'):
 
 
 hash_length = 7
-line_length = int(os.popen('stty size', 'r').read().split()[1])
+line_length = 80
 branch_name_length = 10
 src = None
 dest = None
@@ -301,7 +301,7 @@ def branch_exists(branch):
 
 # Basic command input parser
 def process_commands():
-    global src, dest, source_history, destination_history
+    global src, dest, source_history, destination_history, line_length
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -312,6 +312,7 @@ def process_commands():
         '--key', help='Display with color code', action='store_true'
     )
     parser.add_argument('--recut', help='Recut view', action='store_true')
+    parser.add_argument('--cols', help='Number of columns')
     args = parser.parse_args()
 
     src = args.src
@@ -359,6 +360,11 @@ def process_commands():
     # Display with color code
     if args.recut:
         cmd = Commands.offset_recut
+    # Configure the number of columns
+    if args.cols != None:
+        line_length = int(args.cols)
+    else:
+        line_length = int(os.get_terminal_size().columns)
     # Run the proper command
     if cmd == Commands.show_side_by_side:
         show_side_by_side()

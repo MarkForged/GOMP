@@ -1,10 +1,11 @@
-usage: gomp.py [-h] [--key] [--recut] [src] dest
+usage: gomp.py [-h] [--key] [--recut] [--cols COLS] [src] dest
 
 positional arguments:
-  src         Left side branch
-  dest        Right side branch
+  src          Left side branch
+  dest         Right side branch
 
 optional arguments:
-  -h, --help  show this help message and exit
-  --key       Display with color code
-  --recut     Recut view
+  -h, --help   show this help message and exit
+  --key        Display with color code
+  --recut      Recut view
+  --cols COLS  Number of columns

@@ -1,6 +1,6 @@
 
-[1mRecut feature from main         [0m
-[1m--------------------------------[0m
+[1mRecut feature from main                [0m
+[1m---------------------------------------[0m
 [92mpick ce9dac8c53af03d8 Commit 0  [0m
 [92mpick c0aadea35962d875 Commit 1  [0m
 [92mpick 2349725f6801948b Commit 2  [0m

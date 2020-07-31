@@ -1,6 +1,8 @@
 from subprocess import run
 import unittest
 
+# The number of columns to use during test recording and playback
+NUM_COLS = '80'
 
 class GOMPIntegrationTestCase(unittest.TestCase):
 
@@ -13,7 +15,7 @@ class GOMPIntegrationTestCase(unittest.TestCase):
         run(['sh', 'tearDown.sh'])
 
     def test_feature_main(self):
-        gomp_output = run(['python3', '../gomp.py', 'feature', 'main'],
+        gomp_output = run(['python3', '../gomp.py', 'feature', 'main', '--cols', NUM_COLS],
                           capture_output=True,
                           universal_newlines=True,
                           check=False,
@@ -24,7 +26,7 @@ class GOMPIntegrationTestCase(unittest.TestCase):
         self.assertEqual(gomp_output, expected_output)
 
     def test_recut_feature_main(self):
-        gomp_output = run(['python3', '../gomp.py', 'feature', 'main', '--recut'],
+        gomp_output = run(['python3', '../gomp.py', 'feature', 'main', '--recut', '--cols', NUM_COLS],
                           capture_output=True,
                           universal_newlines=True,
                           check=False,
@@ -35,7 +37,7 @@ class GOMPIntegrationTestCase(unittest.TestCase):
         self.assertEqual(gomp_output, expected_output)
 
     def test_key_feature_main(self):
-        gomp_output = run(['python3', '../gomp.py', 'feature', 'main', '--key'],
+        gomp_output = run(['python3', '../gomp.py', 'feature', 'main', '--key', '--cols', NUM_COLS],
                           capture_output=True,
                           universal_newlines=True,
                           check=False,
