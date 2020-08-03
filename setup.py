@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="gomp",
-    version="1.0.0",
+    version="1.1.0",
     author="Markforged",
     author_email="software@markforged.com",
     description="Git cOMPare",
@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://www.markforged.com",
     packages=setuptools.find_packages(),
-    entry_points={"console_scripts": ["gomp=gomp.process_commands"]},
+    entry_points={"console_scripts": ["gomp=gomp.gomp:process_commands"]},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
