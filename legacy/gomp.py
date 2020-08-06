@@ -1,4 +1,4 @@
-#!usr/bin/env python
+#!/usr/bin/env python
 # Side by side branch diffing from last common hash:
 #   gomp staging rc
 # Show color code:
