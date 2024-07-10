@@ -17,6 +17,7 @@ import os
 import re
 from subprocess import run, PIPE
 import argparse
+import platform
 
 #############
 ### ENUMS ###
@@ -388,4 +389,6 @@ def process_commands():
 
 
 if __name__ == '__main__':
+    if platform.system() == "Windows":
+        os.system('color')
     process_commands()
