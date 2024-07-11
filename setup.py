@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="gomp",
-    version="1.1.0",
+    version="1.1.1",
     author="Markforged",
     author_email="software@markforged.com",
     description="Git cOMPare",
