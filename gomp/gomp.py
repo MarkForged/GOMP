@@ -23,6 +23,7 @@ import platform
 ### ENUMS ###
 #############
 
+
 # pylint: disable=global-statement
 class Commands:
     show_side_by_side = 'show side by side'
@@ -304,14 +305,16 @@ def show_recut_offer():
     print_for_rebase(lines)
 
 
-def branch_exists(branch):
+def ref_exists(ref):
+    """Check if a git reference (branch or tag) exists and is commit-ish."""
+    # Lightweight tags are 'commit', annotated tags are 'tag'
     verify = run(
-        ['git', 'cat-file', '-t', branch],
+        ['git', 'cat-file', '-t', ref],
         stdout=PIPE,
         universal_newlines=True,
         check=False,
     ).stdout.strip()
-    return verify == 'commit'
+    return verify in ['commit', 'tag']
 
 
 # Basic command input parser
@@ -320,9 +323,9 @@ def process_commands():
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        'src', nargs='?', default='HEAD', help='Left side branch'
+        'src', nargs='?', default='HEAD', help='Left side branch or tag'
     )
-    parser.add_argument('dest', help='Right side branch')
+    parser.add_argument('dest', help='Right side branch or tag')
     parser.add_argument(
         '--key', help='Display with color code', action='store_true'
     )
@@ -333,16 +336,22 @@ def process_commands():
     src = args.src
     dest = args.dest
 
-    if not branch_exists(src):
-        print('Branch {} does not exist'.format(colorize(src, BColors.SRC_NEW)))
+    src_exists = ref_exists(src)
+    dest_exists = ref_exists(dest)
 
-    if not branch_exists(dest):
-        print(
-            'Branch {} does not exist'.format(colorize(dest, BColors.DEST_NEW))
-        )
-
-    # Check if src and dest exist
-    if not (branch_exists(src) and branch_exists(dest)):
+    if not src_exists or not dest_exists:
+        if not src_exists:
+            print(
+                'Branch or tag {} does not exist'.format(
+                    colorize(src, BColors.SRC_NEW)
+                )
+            )
+        if not dest_exists:
+            print(
+                'Branch or tag {} does not exist'.format(
+                    colorize(dest, BColors.DEST_NEW)
+                )
+            )
         print(
             'Local may not be synced with remote, please run {} and try again'.format(
                 colorize('git fetch', BColors.COMMON)
